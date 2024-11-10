@@ -1,11 +1,7 @@
 import streamlit as st
 from extract_audio_yt_dlp import YouTubeAudioTranscriber
 import os
-from dotenv import load_dotenv
 from openai import OpenAI
-
-# Load environment variables
-load_dotenv()
 
 def initialize_transcriber():
     try:
@@ -15,7 +11,7 @@ def initialize_transcriber():
         st.stop()
 
 def summarize_text(text):
-    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+    client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
     
     try:
         response = client.chat.completions.create(
