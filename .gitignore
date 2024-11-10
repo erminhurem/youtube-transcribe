@@ -1,0 +1,15 @@
+venv/
+.env
+*.pyc
+*.log
+*.txt
+*.json
+*.csv
+*.jsonl
+*.jsonl.gz
+*.jsonl.tar.gz
+*.jsonl.tar
+*.jsonl.zip
+*.jsonl.bz2
+
+__pycache__/
